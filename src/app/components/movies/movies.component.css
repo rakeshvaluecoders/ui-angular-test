@@ -1,0 +1,8 @@
+.movies-section {padding-bottom: 100px;}
+.poster img {height: 300px; width: 100%; object-fit:fill;}
+.moviesData h3 {font-weight: bold; font-size: 18px;}
+.moviesData p {margin: 0;}
+.moviesData p span {display: inline-block; width: 60px;}
+.form-search {padding-top: 15px;}
+.form-search .form-group * {margin-left: 10px;}
+.form-group label {color: #fff; font-style: italic;}

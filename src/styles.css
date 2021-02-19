@@ -1,0 +1,8 @@
+html, body {
+    height: 100%;
+}
+body {
+    background: rgb(78,89,243);
+    background: linear-gradient(45deg, rgba(78,89,243,1) 0%, rgba(108,70,232,1) 100%);
+    font-family: 'Roboto', sans-serif;
+}

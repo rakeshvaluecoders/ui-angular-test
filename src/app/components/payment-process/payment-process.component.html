@@ -1,0 +1,76 @@
+<div class="d-flex align-items-center payment-page">
+    <div class="payment-form">
+        <h1>Checkout</h1>
+        <div class="d-flex align-items-center justify-content-around steps">
+            <span class="detail" [class.done]="stepOneDone">Detail</span>
+            <span class="payment" [class.done]="stepTwoDone">Payment</span>
+            <span class="success" [class.done]="stepThreeDone">Success</span>
+        </div>  
+
+        <div *ngIf="stepone" class="step-1">
+                <div class="fieldset">
+                    <h4>Fill this form with your identity.</h4>
+                    <form (ngSubmit)="onSubmit(paymentForm)" #paymentForm="ngForm">
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" name="name" class="form-control"  aria-describedby="emailHelp" required ngModel>
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">Email</label>
+                        <input type="email" name="email" class="form-control" required email ngModel>
+                        <small id="emailHelp" class="form-text text-muted">The download link will be sent to this email.</small>
+                        </div>
+                        <button (click) = "continue()" type="submit" [disabled]="!paymentForm.valid" class="btn btn-primary w-100 mt-4 p-3">Continue</button>
+                    </form>
+                </div>
+        </div>
+
+        <div *ngIf="steptwo" class="step-2">
+            <div class="fieldset">
+                <h4>Fill this form with your credit card details.</h4>
+                <form (ngSubmit)="onSubmit2(paymentForm2)" #paymentForm2="ngForm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Card Number</label>
+                                <input type="number" name="cardnumber" class="form-control"  required ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Exipre</label>
+                                <input type="number" name="expire" class="form-control"  required ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Name on Card</label>
+                                <input type="text" name="cardname" class="form-control" required ngModel>
+                                <small class="form-text text-muted padlock">
+                                    <img src="https://image.flaticon.com/icons/svg/481/481195.svg">Secure Payment</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Code</label>
+                                <input type="number" name="code" class="form-control"  required ngModel>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <button (click) = "pay()" type="submit" [disabled]="!paymentForm2.valid" class="btn btn-primary w-100 mt-4 p-3">Pay with Credit Card</button>
+                </form>
+            </div>
+        </div>
+
+        <div *ngIf="stepthree" class="step-3">
+            <div class="success-step text-center mt-5">
+                <h4>Thank you</h4>
+                <p>Your order was completed successfully.</p>
+            </div>
+        </div>
+
+    </div>
+</div>

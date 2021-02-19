@@ -1,0 +1,37 @@
+<section class="movies-section">
+<div class="container">
+
+    <div class="form-search">
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label>Search Your Favorite Moive</label>
+                      <input type="text" class="form-control" [(ngModel)] = "searched" id="inputPassword2">
+                      <button type="button" (click)="searchMovie()" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3 mt-4" *ngFor = "let movie of moviesData">
+        <div class="card moviesData shadow-sm h-100">
+            <div class="poster">
+                <img src="{{movie.Poster}}" alt="poster" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h3>{{movie.Title}}</h3>
+                <p><span>Year </span>: &nbsp; {{movie.Year}}</p>
+                <p><span>ID </span>: &nbsp; {{movie.imdbID}}</p>
+                <p><span>Type </span>: &nbsp; {{movie.Type}}</p>
+                <p><a class="btn btn-secondary mt-3" href="#">View details »</a></p>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+</section>
