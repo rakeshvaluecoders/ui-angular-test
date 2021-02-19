@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Intructions
+- I am UI developer. I can convert psd into Angular components
+- Api added for movies listing (http://www.omdbapi.com/?apikey=a4839531&s=bat)
+- I did not get api for movie detail page
+
